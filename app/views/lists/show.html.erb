@@ -1,0 +1,16 @@
+<%= @list.name %>
+
+<ul>
+  <% @list.bookmarks.each do |bookmark|%>
+    <li>
+      <%= bookmark.comment %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Add a bookmark", new_list_bookmark_path(@list) %>
+
+<%= link_to 'Back home', lists_path %>
+
+
+<%# Creer un bouton qui permet d'Ajouter un film %>
