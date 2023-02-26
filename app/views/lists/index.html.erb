@@ -1,9 +1,17 @@
-<h1>My lists</h1>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2970&q=80https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2970&q=80https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2970&q=80')">
+  <h1>Save any kind of movies</h1>
+</div>
 
-<ul>
-  <% @lists.each do |list| %>
-    <li class><%= link_to list.name, list_path(list) %></li>
-  <% end %>
-</ul>
+<div class="container ">
 
-<%= link_to '+ Create a new list of movies', new_list_path %>
+  <div class="d-flex flex-row-reverse">
+    <%= link_to '+ Create a new list of movies', new_list_path, class:'btn btn-primary rounded-3 mt-2' %>
+  </div>
+
+  <ul class='list-inline d-flex justify-center'>
+    <% @lists.each do |list| %>
+      <li class="col-3 p-3 m-3 border border-grey rounded-4 text-center"><%= link_to list.name, list_path(list), class: 'text-decoration-none' %></li>
+    <% end %>
+  </ul>
+
+</div>
